@@ -14,14 +14,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors({
-  origin: "https://your-frontend.vercel.app",
-  credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 
 // Test route
-app.get("/test", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "Backend working ✅" }); 
 });
 
